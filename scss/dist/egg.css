@@ -1,0 +1,302 @@
+:root {
+  --bg-color: #e1abc5;
+  --btn-color: #b6122b;
+  --cracked-color: #e4d364;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: #c0f8ff;
+}
+
+.egg {
+  background-color: var(--bg-color);
+  border-radius: 54%/65% 65% 47% 47%;
+  width: 275px;
+  height: 320px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 216px;
+  box-shadow: 2px 4px 20px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.egg .details .shadow {
+  border-radius: 54%/65% 65% 47% 47%;
+  top: 5%;
+  left: 5%;
+  width: 85%;
+  height: 85%;
+  position: absolute;
+  box-shadow: 10px 15px 10px 10px #000;
+  filter: blur(2px);
+  mix-blend-mode: overlay;
+  opacity: 0.1;
+}
+.egg .details .highlight {
+  position: absolute;
+  width: 25px;
+  height: 120px;
+  border-radius: 70% 20% 20% 100%/50% 20% 20% 70%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(40deg);
+  left: 45px;
+  top: 5px;
+  filter: blur(2px);
+}
+.egg .cracked {
+  background-color: rgba(55, 38, 6, 0.1);
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: -25px;
+  clip-path: polygon(23% 34%, 34% 35%, 44% 31%, 61% 36%, 68% 32%, 78% 39%, 78% 53%, 83% 64%, 78% 74%, 78% 90%, 60% 88%, 50% 94%, 42% 88%, 31% 91%, 23% 85%, 23% 76%, 17% 67%, 23% 48%);
+  filter: blur(2px);
+}
+.egg .cracked::before {
+  content: "";
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  top: 5px;
+  left: 5px;
+  right: 0;
+  bottom: 0;
+  background-color: var(--cracked-color);
+  z-index: 0;
+  clip-path: polygon(23% 34%, 34% 35%, 44% 31%, 61% 36%, 68% 32%, 78% 39%, 78% 53%, 83% 64%, 78% 74%, 78% 90%, 60% 88%, 50% 94%, 42% 88%, 31% 91%, 23% 85%, 23% 76%, 17% 67%, 23% 48%);
+}
+.egg .screen {
+  position: relative;
+  z-index: 2;
+  width: 135px;
+  height: 130px;
+  background-color: #e2e6c9;
+  border-radius: 5%;
+  box-shadow: inset 0px 0px 5px 3px rgba(63, 62, 62, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+.egg .screen .screen-inner {
+  height: 80%;
+  position: relative;
+}
+.egg .screen .screen-bg {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  z-index: 0;
+}
+.egg .screen .screen-bg .screen-1 {
+  fill: #c6e9f4;
+}
+.egg .screen .screen-bg .screen-1,
+.egg .screen .screen-bg .screen-2,
+.egg .screen .screen-bg .screen-3,
+.egg .screen .screen-bg .screen-4,
+.egg .screen .screen-bg .screen-5,
+.egg .screen .screen-bg .screen-6 {
+  opacity: 0.3;
+}
+.egg .screen .screen-bg .screen-2 {
+  fill: #e1abc5;
+}
+.egg .screen .screen-bg .screen-3 {
+  fill: #c3e8f2;
+}
+.egg .screen .screen-bg .screen-4 {
+  fill: #c1e7f1;
+}
+.egg .screen .screen-bg .screen-5 {
+  fill: #fff;
+}
+.egg .screen .screen-bg .screen-6 {
+  fill: #e4b3cb;
+}
+.egg .screen .menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  z-index: 5;
+}
+.egg .screen .menu .action-btn {
+  border: none;
+  background-color: transparent;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+.egg .screen .menu .action-btn:hover {
+  opacity: 1;
+}
+.egg .screen .menu .action-btn#feed {
+  background-image: url("../icons/Food_icon_p1.png");
+}
+.egg .screen .menu .action-btn#light {
+  background-image: url("../icons/Lights_icon_p1.png");
+}
+.egg .screen .menu .action-btn#play {
+  background-image: url("../icons/Game_icon_p1.png");
+}
+.egg .screen .menu .action-btn#meds {
+  background-image: url("../icons/Medicine_icon_p1.png");
+}
+.egg .screen .menu .action-btn#bath {
+  background-image: url("../icons/Bathroom_icon_p1.png");
+}
+.egg .screen .menu .action-btn#stats {
+  background-image: url("../icons/Status_icon_p1.png");
+}
+.egg .screen .menu .action-btn#discipline {
+  background-image: url("../icons/Training_icon_p1.png");
+}
+.egg .screen .menu .action-btn#attention {
+  background-image: url("../icons/Attention_icon_p1.png");
+}
+.egg .buttons {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 9%;
+  z-index: 3;
+}
+.egg .buttons button {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  background-color: var(--btn-color);
+  position: relative;
+  border: 0;
+  box-shadow: inset 1px 3px 2px 0px rgba(0, 0, 0, 0.5), 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.egg .buttons button:nth-child(2) {
+  position: relative;
+  top: 5px;
+}
+.egg .buttons button:active {
+  background-color: #931d2f;
+  box-shadow: inset 1px 3px 7px 0px rgba(0, 0, 0, 0.5), 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.egg .svg-bg {
+  position: absolute;
+}
+.egg .svg-bg .egg-bg-1 {
+  fill: #f8edf4;
+}
+.egg .svg-bg .egg-bg-2 {
+  fill: #e4d365;
+}
+.egg .svg-bg .egg-bg-3 {
+  fill: #b61f2d;
+}
+.egg .svg-bg .egg-bg-4 {
+  fill: #c0376e;
+}
+.egg .svg-bg .egg-bg-5 {
+  fill: #3ebfba;
+}
+
+.tama {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.tama.walk {
+  animation: walk 15s infinite;
+}
+.tama .eggy {
+  background: url("../sprites/egg.png") left center;
+  width: 23px;
+  height: 22px;
+  animation: egg-ani 0.8s steps(2) infinite;
+}
+.tama .baby {
+  width: 17px;
+  height: 16px;
+  animation: baby-ani 1.1s steps(2) infinite;
+}
+.tama .baby-shiro {
+  background: url("../sprites/baby-shiro.png") left center;
+}
+.tama .baby-shiro.hatch {
+  width: 32px;
+  height: 32px;
+  background: url("../sprites/baby-shiro-hatch.png") left center;
+  animation: egg-hatch-ani 1.1s steps(4) 1 forwards;
+}
+.tama .baby-petit {
+  background: url("../sprites/baby-petit.png") left center;
+}
+.tama .baby-petit.hatch {
+  width: 32px;
+  height: 32px;
+  background: url("../sprites/baby-petit-hatch.png") left center;
+  animation: egg-hatch-ani 1.1s steps(4) 1 forwards;
+}
+
+@keyframes walk {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  20% {
+    transform: translate(-50%, -50%);
+  }
+  20.0001% {
+    transform: translate(-150%, -150%);
+  }
+  40% {
+    transform: translate(-150%, -150%);
+  }
+  40.0001% {
+    transform: translate(50%, 50%);
+  }
+  60% {
+    transform: translate(50%, 50%);
+  }
+  60.0001% {
+    transform: translate(150%, -50%);
+  }
+  80% {
+    transform: translate(150%, -50%);
+  }
+  80.0001% {
+    transform: translate(-200%, -20%);
+  }
+  100% {
+    transform: translate(-200%, -20%);
+  }
+}
+@keyframes egg-ani {
+  100% {
+    background-position: -47px;
+  }
+}
+@keyframes egg-hatch-ani {
+  100% {
+    background-position: -128px;
+  }
+}
+@keyframes baby-ani {
+  100% {
+    background-position: -32px;
+  }
+}
